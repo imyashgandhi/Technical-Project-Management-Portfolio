@@ -1,627 +1,292 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8f7f4">
-<meta name="description" content="Yash Gandhi — Project Coordination, Project Controls and Analytics Portfolio.">
-<title>Yash Gandhi — Project Management Portfolio</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
-
-:root{
-  --bg:#f8f7f4;
-  --paper:#fff;
-  --ink:#1e252b;
-  --muted:#69747c;
-  --line:#e3e4e1;
-  --blue:#315b77;
-  --soft:#edf1f2;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:"DM Sans",sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{max-width:1160px;margin:auto;padding:0 34px}
-header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(248,247,244,.96);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  display:flex;justify-content:space-between;
-  align-items:center;min-height:78px;gap:24px;
-}
-.logo{
-  font-family:Manrope,sans-serif;
-  font-size:19px;font-weight:800;letter-spacing:-.8px;
-}
-.logo span{color:var(--blue)}
-.links{display:flex;gap:32px;align-items:center}
-.links a{font-size:13px;font-weight:600;color:#555e65}
-.links a:hover{color:var(--blue)}
-.nav-cta{
-  border:1px solid #b6c1c8;
-  padding:11px 16px;border-radius:4px;
-}
-.menu-btn{display:none;background:none;border:0;font-size:24px}
-
-.hero{padding:125px 0 110px}
-.overline{
-  display:flex;align-items:center;gap:12px;
-  font-size:11px;font-weight:700;letter-spacing:2.3px;
-  text-transform:uppercase;color:var(--blue);
-}
-.overline:before{
-  content:"";width:30px;height:1px;background:var(--blue);
-}
-{.hero h1{
-  font-family:Manrope,sans-serif;
-  font-size:clamp(52px,7vw,90px);
-  line-height:1.12;
-  letter-spacing:-.055em;
-  font-weight:700;
-  margin:34px 0 30px;
-}
-  font-family:Manrope,sans-serif;
-  font-size:clamp(80px,13vw,160px);
-  line-height:.94;letter-spacing:-.095em;
-  font-weight:800;margin:34px 0 30px;
-}
-.hero h1 em{font-style:normal;color:var(--blue)}
-.hero-bottom{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:70px;align-items:end;
-  border-top:1px solid var(--line);padding-top:32px;
-}
-.hero-statement{
-  font-family:Manrope,sans-serif;
-  font-size:clamp(25px,3vw,37px);
-  line-height:1.35;letter-spacing:-1.4px;
-  font-weight:600;margin:0;
-}
-.hero-desc{
-  color:var(--muted);font-size:15px;
-  line-height:1.9;max-width:440px;margin:0 0 25px;
-}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;gap:16px;
-  padding:15px 22px;font-size:13px;font-weight:700;
-  border:1px solid #b9c1c5;border-radius:4px;
-  transition:transform .2s,background .2s;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn.primary{background:var(--ink);color:white;border-color:var(--ink)}
-.btn.primary:hover{background:var(--blue)}
-
-.section{padding:105px 0;border-top:1px solid var(--line)}
-.section-header{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:50px;align-items:end;margin-bottom:45px;
-}
-.section-label{
-  font-size:11px;letter-spacing:2px;
-  text-transform:uppercase;font-weight:700;color:var(--blue);
-  margin-bottom:18px;
-}
-h2{
-  font-family:Manrope,sans-serif;
-  font-size:clamp(34px,4.5vw,58px);
-  letter-spacing:-2.6px;line-height:1.12;margin:0;
-}
-.section-intro{
-  color:var(--muted);font-size:15px;
-  line-height:1.85;margin:0;max-width:450px;
-}
-
-.feature{
-  display:grid;grid-template-columns:1.08fr .92fr;
-  background:var(--paper);border:1px solid var(--line);
-  min-height:470px;
-}
-.feature-copy{padding:48px}
-.project-number{
-  font-size:12px;color:var(--muted);letter-spacing:1px;
-  margin-bottom:55px;
-}
-.feature h3{
-  font-family:Manrope,sans-serif;
-  font-size:clamp(28px,3.5vw,44px);
-  letter-spacing:-1.8px;line-height:1.2;margin:0 0 20px;
-}
-.feature p{
-  font-size:15px;line-height:1.9;color:var(--muted);
-  max-width:480px;
-}
-.project-meta{
-  display:flex;gap:20px;flex-wrap:wrap;
-  margin:28px 0 36px;
-}
-.project-meta span{
-  font-size:11px;letter-spacing:.5px;font-weight:700;
-  border-top:1px solid var(--line);
-  padding-top:12px;color:#53616b;
-}
-.text-link{
-  display:inline-block;font-size:13px;font-weight:700;
-  border-bottom:1px solid var(--ink);padding-bottom:7px;
-}
-.text-link:hover{color:var(--blue);border-color:var(--blue)}
-.feature-visual{
-  background:#e8ecee;display:flex;
-  flex-direction:column;justify-content:center;
-  padding:40px;overflow:hidden;
-}
-.visual-label{
-  font-size:11px;letter-spacing:2px;
-  font-weight:700;color:#607483;text-transform:uppercase;
-  margin-bottom:20px;
-}
-.mock-dashboard{
-  background:white;border:1px solid #d9dfe2;
-  box-shadow:0 18px 40px rgba(35,55,65,.08);
-  padding:22px;transform:rotate(-2deg);
-}
-.mock-head{
-  display:flex;justify-content:space-between;
-  align-items:center;border-bottom:1px solid #e7ebed;
-  padding-bottom:15px;font-weight:700;font-size:14px;
-}
-.mock-head small{font-size:10px;color:#7c8990}
-.metrics{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:9px;margin:17px 0;
-}
-.metric{
-  border:1px solid #e6e9eb;padding:13px 9px;
-}
-.metric strong{display:block;font-size:18px}
-.metric small{font-size:9px;color:#7b858d}
-.bars{display:flex;align-items:end;gap:9px;height:110px}
-.bars i{
-  display:block;flex:1;background:#8ca5b5;
-  border-radius:2px 2px 0 0;
-}
-.bars i:nth-child(even){background:#c2d1d8}
-.mock-foot{
-  font-size:10px;color:#75818a;margin-top:14px;
-}
-.visual-disclaimer{
-  font-size:11px;color:#667985;margin-top:24px;
-  line-height:1.6;
-}
-
-.work-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:18px;margin-top:22px;
-}
-.work-card{
-  background:var(--paper);border:1px solid var(--line);
-  padding:32px;min-height:240px;
-}
-.work-card .num{font-size:12px;color:var(--blue);font-weight:700}
-.work-card h3{
-  font-family:Manrope,sans-serif;font-size:20px;
-  letter-spacing:-.6px;margin:30px 0 12px;
-}
-.work-card p{
-  font-size:14px;color:var(--muted);
-  line-height:1.8;margin:0;
-}
-.work-card .status{
-  display:inline-block;margin-top:23px;
-  font-size:11px;font-weight:700;color:var(--blue);
-}
-.downloads{
-  display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;
-}
-.downloads a{
-  border:1px solid #c9d0d4;padding:13px 18px;
-  font-size:12px;font-weight:700;background:white;
-}
-.downloads a:hover{border-color:var(--blue);color:var(--blue)}
-.file-note{font-size:12px;color:var(--muted);line-height:1.8}
-
-.about-grid{
-  display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;
-}
-.about-copy{
-  font-size:17px;line-height:1.9;color:#505c65;
-}
-.about-copy p:first-child{margin-top:0}
-.about-facts{border-top:1px solid var(--line)}
-.fact{
-  display:grid;grid-template-columns:135px 1fr;
-  gap:20px;border-bottom:1px solid var(--line);
-  padding:21px 0;font-size:14px;
-}
-.fact strong{font-size:12px;color:var(--blue)}
-.fact span{line-height:1.7}
-
-.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.skill-group{border-top:2px solid var(--ink);padding-top:24px}
-.skill-group h3{
-  font-family:Manrope,sans-serif;font-size:19px;
-  margin:0 0 18px;
-}
-.skill-group p{
-  font-size:14px;line-height:2;color:var(--muted);margin:0;
-}
-
-.roadmap{border-top:1px solid var(--line)}
-.roadmap-row{
-  display:grid;grid-template-columns:90px 1fr 120px;
-  gap:24px;align-items:center;padding:25px 0;
-  border-bottom:1px solid var(--line);
-}
-.roadmap-row .phase-no{font-size:12px;color:var(--blue);font-weight:700}
-.roadmap-row strong{font-size:16px;font-weight:600}
-.roadmap-row small{text-align:right;color:var(--muted);font-size:12px}
-
-.contact{
-  background:#202d36;color:#fff;padding:100px 0;
-}
-.contact .section-label{color:#a5c0d0}
-.contact h2{font-size:clamp(42px,6vw,80px);max-width:800px}
-.contact p{color:#c1ccd2;line-height:1.8;margin:25px 0 35px}
-.contact .btn{border-color:#8c9ca6;color:white}
-.contact .btn.primary{background:white;color:#202d36;border-color:white}
-footer{background:#202d36;color:#a8b7c0}
-.footer-inner{
-  border-top:1px solid #46545d;padding:25px 0 35px;
-  display:flex;justify-content:space-between;
-  gap:20px;font-size:12px;
-}
-footer a:hover{color:white}
-
-@media(max-width:850px){
-  .hero-bottom,.section-header,.feature,.about-grid{grid-template-columns:1fr}
-  .hero-bottom{gap:24px}
-  .feature-visual{min-height:380px}
-  .work-grid,.skill-grid{grid-template-columns:1fr 1fr}
-  .section{padding:75px 0}
-}
-@media(max-width:620px){
-  .container{padding:0 22px}
-  .nav{min-height:68px}
-  .menu-btn{display:block}
-  .links{
-    display:none;position:absolute;top:68px;left:0;right:0;
-    padding:20px;background:var(--bg);
-    border-bottom:1px solid var(--line);
-    flex-direction:column;align-items:flex-start;gap:20px;
-  }
-  .links.open{display:flex}
-  .hero{padding:70px 0 80px}
-  .hero h1{font-size:clamp(68px,17vw,105px)}
-  .feature-copy{padding:30px}
-  .feature-visual{padding:26px}
-  .work-grid,.skill-grid{grid-template-columns:1fr}
-  .roadmap-row{grid-template-columns:65px 1fr;gap:12px}
-  .roadmap-row small{grid-column:2;text-align:left}
-  .fact{grid-template-columns:1fr;gap:6px}
-  .footer-inner{flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .btn{transition:none}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yash Gandhi Technical Project Management portfolio showcasing project controls, Excel, Power Query, Power BI, and a simulated CRM implementation case study." />
+  <title>Yash Gandhi | Technical Project Management Portfolio</title>
+  <style>
+    :root{
+      --bg:#f5f7fb; --surface:#ffffff; --ink:#132238; --muted:#65758b;
+      --line:#dfe6ef; --navy:#10233f; --blue:#2f6fed; --teal:#0f9d8f;
+      --soft:#edf4ff; --soft2:#eef9f7; --shadow:0 14px 36px rgba(18,34,56,.10);
+      --radius:18px; --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:68px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .brand{font-weight:800;letter-spacing:.2px;color:var(--navy)}
+    .brand span{color:var(--blue);font-weight:700}
+    nav{display:flex;gap:20px;flex-wrap:wrap}
+    nav a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:600}
+    nav a:hover{color:var(--navy)}
+    .hero{padding:88px 0 64px;background:linear-gradient(180deg,rgba(47,111,237,.04),transparent 70%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+    .eyebrow{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--soft);color:var(--blue);font-weight:800;font-size:.78rem;letter-spacing:.5px;text-transform:uppercase;margin-bottom:18px}
+    h1{margin:0 0 18px;font-size:clamp(2.7rem,5vw,5rem);line-height:1.02;letter-spacing:-2px;color:var(--navy)}
+    .hero .lead{font-size:1.16rem;color:var(--muted);max-width:760px;margin:0 0 28px}
+    .roleline{color:var(--navy);font-weight:700;margin-bottom:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;text-decoration:none;font-weight:800;border:1px solid var(--line)}
+    .btn.primary{background:var(--blue);color:white;border-color:var(--blue)}
+    .btn.secondary{background:white;color:var(--navy)}
+    .hero-card,.case,.proof-panel,.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:26px}
+    .hero-card .label,.card .kicker{color:var(--teal);font-weight:800;text-transform:uppercase;letter-spacing:.6px;font-size:.76rem;margin-bottom:10px}
+    .hero-card h3{margin:0 0 10px;font-size:1.35rem;color:var(--navy)}
+    .hero-card p{margin:0;color:var(--muted);font-size:.95rem}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+    .mini{padding:14px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+    .mini strong{display:block;font-size:1.05rem;color:var(--navy)}
+    .mini span{font-size:.82rem;color:var(--muted)}
+    section{padding:72px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:28px}
+    .section-head h2{margin:0;font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-1.4px;color:var(--navy)}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+    .case{padding:30px}
+    .case-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap}
+    .case-top h3{margin:0 0 8px;color:var(--navy);font-size:1.55rem}
+    .case-top p{margin:0;color:var(--muted);max-width:760px}
+    .badge{display:inline-block;padding:7px 10px;border-radius:999px;font-size:.78rem;font-weight:800;border:1px solid var(--line);background:var(--soft2);color:var(--teal)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .card{border:1px solid var(--line);border-radius:15px;background:#fbfcfe;padding:20px}
+    .card h4{margin:0 0 8px;color:var(--navy);font-size:1.05rem}
+    .card p{margin:0;color:var(--muted);font-size:.92rem}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+    .tag{padding:5px 9px;border-radius:999px;background:var(--soft);color:#305eab;font-size:.76rem;font-weight:700}
+    .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+    .proof-panel{padding:24px}
+    .proof-panel h3{margin:0 0 10px;color:var(--navy)}
+    .proof-panel p{color:var(--muted);margin:0 0 14px}
+    .proof-panel img{width:100%;display:block;border-radius:12px;border:1px solid var(--line);margin-top:14px}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .skill{padding:22px}
+    .skill h3{margin:0 0 7px;color:var(--navy);font-size:1.05rem}
+    .skill p{margin:0;color:var(--muted);font-size:.93rem}
+    .roadmap{display:grid;gap:11px}
+    .phase{display:grid;grid-template-columns:100px 1fr auto;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+    .phase strong{color:var(--blue)}
+    .phase p{margin:0;color:var(--muted)}
+    .status{font-size:.77rem;font-weight:800;padding:6px 9px;border-radius:999px;background:#f3f6fa;color:var(--muted)}
+    .status.done{background:var(--soft2);color:var(--teal)}
+    .status.progress{background:#fff7e6;color:#a66a00}
+    .disclaimer{background:#f8fbff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:18px;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:20px}
+    .contact-card strong{display:block;color:var(--navy);margin-bottom:6px}
+    .contact-card a{text-decoration:none;color:var(--blue);word-break:break-word}
+    footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--muted);font-size:.88rem;background:white}
+    @media(max-width:900px){.hero-grid,.proof-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){nav{display:none}.cards,.skills-grid,.contact-grid{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.hero{padding-top:64px}}
+  </style>
 </head>
 <body>
-
 <header>
-  <div class="container nav">
-    <a href="#home" class="logo">Yash Gandhi<span>.</span></a>
-    <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="links" id="navigation">
-      <a href="#work">Selected Work</a>
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#roadmap">Development</a>
-      <a href="#contact" class="nav-cta">Get in Touch ↗</a>
+  <div class="wrap nav">
+    <div class="brand">Technical PM Portfolio <span>• Yash Gandhi</span></div>
+    <nav>
+      <a href="#case-study">Case Study</a>
+      <a href="#proof">Proof of Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="hero" id="home">
-  <div class="container">
-    <div class="overline">Project Management & Analytics Portfolio</div>
-    <h1>Yash<br>Gandhi<em>.</em></h1>
-    <div class="hero-bottom">
-      <h2 class="hero-statement">Structured thinking.<br>Better project decisions.</h2>
+  <section class="hero">
+    <div class="wrap hero-grid">
       <div>
-        <p class="hero-desc">
-          Project coordination professional with a background in technology,
-          operations, and business development. I bring together project
-          planning, stakeholder communication, reporting, and analytics
-          to support effective delivery.
-        </p>
-        <div class="buttons">
-          <a class="btn primary" href="#work">Explore My Work ↗</a>
-          <a class="btn" href="https://www.linkedin.com/in/yash-gandhi-220b3a184" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <div class="eyebrow">Project Management • Analytics • Technical Delivery</div>
+        <h1>Yash Gandhi</h1>
+        <div class="roleline">Project Coordinator | Project Analyst | PMO / Project Controls | Technical Project Management</div>
+        <p class="lead">I build structured project controls and reporting workflows that turn task, budget, risk, stakeholder, and delivery data into clear management visibility.</p>
+        <div class="actions">
+          <a class="btn primary" href="#case-study">View CRM Case Study</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/yash-gandhi-220b3a184" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="mailto:imyashgandhi@gmail.com">Email Me</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="work">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-label">01 / Selected Work</div>
-        <h2>From planning<br>to insight.</h2>
-      </div>
-      <p class="section-intro">
-        A selection of practical project management work demonstrating
-        how I organize information, monitor performance, and support
-        decision-making.
-      </p>
-    </div>
-
-    <article class="feature">
-      <div class="feature-copy">
-        <div class="project-number">FEATURED CASE STUDY / 001</div>
-        <h3>CRM Implementation<br>Project Controls</h3>
-        <p>
-          A self-directed, simulated CRM implementation project focused
-          on establishing structured project controls, monitoring
-          delivery performance, and developing management reporting.
-        </p>
-        <div class="project-meta">
-          <span>PROJECT PLANNING</span>
-          <span>EXCEL & POWER QUERY</span>
-          <span>POWER BI</span>
+      <aside class="hero-card">
+        <div class="label">Current portfolio focus</div>
+        <h3>CRM Implementation Case Study</h3>
+        <p>A self-directed simulated implementation project used to demonstrate project controls, data preparation, Power BI reporting, and the progression toward technical project management.</p>
+        <div class="mini-grid">
+          <div class="mini"><strong>Phase 1</strong><span>Excel + Power Query completed</span></div>
+          <div class="mini"><strong>Phase 2</strong><span>Power BI in progress</span></div>
+          <div class="mini"><strong>1</strong><span>Continuous case study</span></div>
+          <div class="mini"><strong>7</strong><span>Planned phases</span></div>
         </div>
-        <a class="text-link" href="#case-details">Explore Case Study ↗</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="case-study">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Featured CRM Implementation Case Study</h2></div>
+        <p>One continuous project story showing how I apply project controls, reporting, data preparation, and business intelligence to practical project-management scenarios.</p>
       </div>
-      <div class="feature-visual">
-        <div class="visual-label">Project reporting / visual concept</div>
-        <div class="mock-dashboard" aria-label="Illustrative dashboard layout">
-          <div class="mock-head">
-            <span>Project Performance Overview</span>
-            <small>CRM IMPLEMENTATION</small>
+
+      <div class="case">
+        <div class="case-top">
+          <div>
+            <h3>From project tracking to executive visibility</h3>
+            <p>The case study is designed around a simulated CRM implementation so each skill is applied in a realistic delivery context rather than as a disconnected tutorial.</p>
           </div>
-          <div class="metrics">
-            <div class="metric"><strong>01</strong><small>Project scenario</small></div>
-            <div class="metric"><strong>05</strong><small>Learning phases</small></div>
-            <div class="metric"><strong>02</strong><small>Core platforms</small></div>
+          <span class="badge">Self-directed simulated project</span>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="kicker">Excel Project Controls</div>
+            <h4>Tracking, Budget, RAID & Stakeholders</h4>
+            <p>Built the core project-control artifacts used to monitor tasks, schedule health, cost performance, risk, actions, and stakeholder communication.</p>
+            <div class="tags"><span class="tag">Project Tracker</span><span class="tag">PM Dashboard</span><span class="tag">Budget</span><span class="tag">RAID</span><span class="tag">Action Log</span></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Excel Analytics</div>
+            <h4>Formula & Reporting Logic</h4>
+            <p>Applied formulas to automate project status, KPI reporting, budget variance, schedule checks, and exception identification.</p>
+            <div class="tags"><span class="tag">IF</span><span class="tag">COUNTIFS</span><span class="tag">SUMIFS</span><span class="tag">XLOOKUP</span><span class="tag">AVERAGE</span><span class="tag">TODAY()</span><span class="tag">PivotTables</span></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Power Query</div>
+            <h4>Repeatable Data Preparation</h4>
+            <p>Cleaned, standardized, combined, and refreshed recurring project data using reusable transformation steps.</p>
+            <div class="tags"><span class="tag">Append</span><span class="tag">Merge</span><span class="tag">Group By</span><span class="tag">Refresh</span><span class="tag">Data Cleaning</span></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Power BI</div>
+            <h4>Data Model, DAX & KPI Reporting</h4>
+            <p>Built an interactive project reporting model with relationships, a Date table, DAX measures, slicers, cross-filtering, task KPIs, and budget-performance reporting.</p>
+            <div class="tags"><span class="tag">Relationships</span><span class="tag">Fact vs Dimension</span><span class="tag">Date Table</span><span class="tag">DAX</span><span class="tag">CALCULATE</span><span class="tag">Filter Context</span></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Current Reporting</div>
+            <h4>Schedule & Budget Performance</h4>
+            <p>Created dynamic measures and management views that respond to phase-level filtering.</p>
+            <div class="tags"><span class="tag">Total Tasks</span><span class="tag">Completed Tasks</span><span class="tag">Blocked Tasks</span><span class="tag">Completion %</span><span class="tag">Budget Variance</span><span class="tag">Over Budget Tasks</span></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Project Mindset</div>
+            <h4>From Data to Action</h4>
+            <p>The focus is not simply maintaining trackers. It is identifying exceptions, assessing impact, taking action, communicating clearly, and following through.</p>
+            <div class="tags"><span class="tag">Track</span><span class="tag">Analyze</span><span class="tag">Assess</span><span class="tag">Act</span><span class="tag">Communicate</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Proof of Work</h2></div>
+        <p>Screenshots are included to show the actual work behind the skills listed above.</p>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-panel">
+          <h3>Power BI Project Performance Dashboard</h3>
+          <p>Interactive CRM project reporting showing task progress, priority, budget vs actual, variance, over-budget tasks, and phase-based filtering using DAX measures and slicers.</p>
+          <img src="power-bi-dashboard.png" alt="CRM Project Performance Dashboard in Power BI" />
+        </div>
+
+        <div class="proof-panel">
+          <h3>What the dashboard demonstrates</h3>
+          <p>The current Power BI milestone demonstrates both project-management thinking and business-intelligence fundamentals.</p>
+          <div class="tags">
+            <span class="tag">Task KPIs</span><span class="tag">Tasks by Priority</span><span class="tag">Tasks by Status</span>
+            <span class="tag">Budget vs Actual by Phase</span><span class="tag">Budget Variance</span><span class="tag">Calculated Column</span>
+            <span class="tag">Measure vs Column</span><span class="tag">Phase Slicer</span><span class="tag">Cross-filtering</span>
           </div>
-          <div class="bars">
-            <i style="height:45%"></i>
-            <i style="height:75%"></i>
-            <i style="height:60%"></i>
-            <i style="height:90%"></i>
-            <i style="height:68%"></i>
-            <i style="height:82%"></i>
-            <i style="height:55%"></i>
-          </div>
-          <div class="mock-foot">Illustrative layout — not actual project metrics</div>
-        </div>
-        <p class="visual-disclaimer">
-          This placeholder will be replaced with a screenshot from
-          the actual Excel or Power BI dashboard.
-        </p>
-      </div>
-    </article>
-
-    <div id="case-details" class="work-grid">
-      <div class="work-card">
-        <span class="num">01 / PROJECT CONTROLS</span>
-        <h3>Planning & Governance</h3>
-        <p>
-          Project tracker, budget monitoring, RAID log, stakeholder
-          register, communication plan, and action tracking.
-        </p>
-        <span class="status">Excel workbook</span>
-      </div>
-      <div class="work-card">
-        <span class="num">02 / DATA PREPARATION</span>
-        <h3>Excel & Power Query</h3>
-        <p>
-          Structured formulas, project KPIs, data cleaning,
-          transformations, and refreshable reporting workflows.
-        </p>
-        <span class="status">Completed phase</span>
-      </div>
-      <div class="work-card">
-        <span class="num">03 / BUSINESS INTELLIGENCE</span>
-        <h3>Power BI Reporting</h3>
-        <p>
-          Data modeling, DAX measures, task status reporting,
-          completion metrics, and interactive dashboard development.
-        </p>
-        <span class="status">In progress</span>
-      </div>
-    </div>
-
-    <div class="downloads">
-      <a href="files/CRM_Implementation_Project.xlsx" download>Download Excel Workbook ↓</a>
-      <a href="files/CRM_Project_PowerBI_Dashboard.pbix" download>Download Power BI File ↓</a>
-    </div>
-    <p class="file-note">
-      Downloads require the corresponding files to be uploaded to the
-      <strong>files</strong> folder in this GitHub repository.
-      Power BI Desktop is required to open the .pbix file.
-    </p>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-label">02 / About</div>
-        <h2>Experience meets<br>curiosity.</h2>
-      </div>
-    </div>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>
-          My background combines IT project coordination, business
-          development, and operational leadership.
-        </p>
-        <p>
-          At CoderKube Technologies, I supported digital project
-          coordination across website, e-commerce, and mobile
-          application initiatives. My subsequent experience in casino
-          operations strengthened my ability to coordinate teams,
-          communicate clearly, and work in regulated environments.
-        </p>
-        <p>
-          I am continuing to develop technical project management
-          capabilities through applied work in analytics, delivery
-          tools, and automation.
-        </p>
-      </div>
-      <div class="about-facts">
-        <div class="fact">
-          <strong>EDUCATION</strong>
-          <span>Postgraduate Studies — Information Technology Project Management<br>
-          B.Tech — Computer Science & Engineering</span>
-        </div>
-        <div class="fact">
-          <strong>EXPERIENCE</strong>
-          <span>IT Project Coordination, Business Development & Operations</span>
-        </div>
-        <div class="fact">
-          <strong>FOCUS</strong>
-          <span>Project Coordination · Project Controls · PMO · Technical Project Delivery</span>
-        </div>
-        <div class="fact">
-          <strong>LOCATION</strong>
-          <span>Calgary, Alberta · Open to opportunities across Canada</span>
+          <div class="disclaimer" style="margin-top:18px;">More screenshots will be added at meaningful milestones, including Excel project controls, Power Query transformation work, schedule analysis, and the final executive Power BI dashboard.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="expertise">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-label">03 / Expertise</div>
-        <h2>What I bring<br>to the table.</h2>
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Skills Demonstrated</h2></div>
+        <p>Focused on practical application and project outcomes rather than listing tools without context.</p>
       </div>
-      <p class="section-intro">
-        A combination of practical coordination experience and
-        technical skills developed through structured project work.
-      </p>
-    </div>
-    <div class="skill-grid">
-      <div class="skill-group">
-        <h3>Project Delivery</h3>
-        <p>Project planning<br>Schedule & milestone tracking<br>Budget monitoring<br>RAID management<br>Stakeholder coordination<br>Status reporting</p>
-      </div>
-      <div class="skill-group">
-        <h3>Data & Reporting</h3>
-        <p>Advanced Excel<br>Power Query<br>PivotTables & PivotCharts<br>KPI dashboards<br>Power BI & DAX fundamentals<br>Data preparation</p>
-      </div>
-      <div class="skill-group">
-        <h3>Tools & Methods</h3>
-        <p>Microsoft Project<br>Jira<br>Trello & Asana<br>Agile / Scrum coordination<br>Documentation & reporting<br>Continuous improvement</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="roadmap">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-label">04 / Professional Development</div>
-        <h2>Building deeper<br>technical capability.</h2>
-      </div>
-      <p class="section-intro">
-        An applied learning roadmap connected to the same CRM
-        implementation scenario, with each phase adding new
-        project delivery capabilities.
-      </p>
-    </div>
-    <div class="roadmap">
-      <div class="roadmap-row">
-        <span class="phase-no">01</span>
-        <strong>Advanced Excel & Power Query</strong>
-        <small>Completed</small>
-      </div>
-      <div class="roadmap-row">
-        <span class="phase-no">02</span>
-        <strong>Power BI & Executive Reporting</strong>
-        <small>In progress</small>
-      </div>
-      <div class="roadmap-row">
-        <span class="phase-no">03</span>
-        <strong>Jira, Confluence & Microsoft Project</strong>
-        <small>Planned</small>
-      </div>
-      <div class="roadmap-row">
-        <span class="phase-no">04</span>
-        <strong>SQL & Data Fundamentals</strong>
-        <small>Planned</small>
-      </div>
-      <div class="roadmap-row">
-        <span class="phase-no">05</span>
-        <strong>AI, LLMs & Power Automate</strong>
-        <small>Planned</small>
+      <div class="skills-grid">
+        <div class="skill"><h3>Project Coordination & Controls</h3><p>Task tracking, ownership, schedule health, budget monitoring, RAID management, action tracking, stakeholder communication, and management reporting.</p></div>
+        <div class="skill"><h3>Excel & Reporting</h3><p>Tables, validation, conditional formatting, IF, COUNTIFS, SUMIFS, XLOOKUP, AVERAGE, TODAY(), PivotTables, and PivotCharts.</p></div>
+        <div class="skill"><h3>Power Query</h3><p>Data cleaning, standardization, Append, Merge, Group By, refresh, source consistency, and transformation troubleshooting.</p></div>
+        <div class="skill"><h3>Power BI</h3><p>Data loading, relationships, cardinality, fact/dimension thinking, Date tables, DAX measures, CALCULATE, filter context, slicers, cross-filtering, and KPI reporting.</p></div>
       </div>
     </div>
-    <p class="file-note" style="margin-top:25px">
-      The featured CRM implementation is a self-directed simulated
-      project, not paid client or employer work.
-    </p>
-  </div>
-</section>
+  </section>
 
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label">05 / Contact</div>
-    <h2>Let's connect and<br>build what's next.</h2>
-    <p>
-      Open to project coordination, project controls,
-      PMO, and technical project delivery opportunities.
-    </p>
-    <div class="buttons">
-      <a class="btn primary" href="mailto:imyashgandhi@gmail.com">Email Me ↗</a>
-      <a class="btn" href="https://www.linkedin.com/in/yash-gandhi-220b3a184" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
-      <a class="btn" href="https://github.com/imyashgandhi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Technical PM Roadmap</h2></div>
+        <p>The portfolio grows at meaningful milestones as new skills are applied to the same CRM project.</p>
+      </div>
+
+      <div class="roadmap">
+        <div class="phase"><strong>Phase 1</strong><p>Excel + Power Query</p><span class="status done">Completed</span></div>
+        <div class="phase"><strong>Phase 2</strong><p>Power BI: modeling, DAX, schedule and budget reporting, executive dashboarding</p><span class="status progress">In progress</span></div>
+        <div class="phase"><strong>Phase 3</strong><p>Jira + Confluence + Microsoft Project</p><span class="status">Planned</span></div>
+        <div class="phase"><strong>Phase 4</strong><p>SQL + Data Fundamentals</p><span class="status">Planned</span></div>
+        <div class="phase"><strong>Phase 5</strong><p>Technical PM Fundamentals: SDLC, APIs, cloud, environments, CI/CD, integrations</p><span class="status">Planned</span></div>
+        <div class="phase"><strong>Phase 6</strong><p>AI / LLMs + Power Automate</p><span class="status">Planned</span></div>
+        <div class="phase"><strong>Phase 7</strong><p>Capstone + portfolio polish + interview preparation</p><span class="status">Planned</span></div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:24px;"><strong>Portfolio note:</strong> This is a self-directed simulated CRM implementation project created to demonstrate practical skills. It is not presented as paid client or employer work.</div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Contact</h2></div>
+        <p>Open to project coordination, project analyst, PMO / project controls, implementation, and Technical PM opportunities.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:imyashgandhi@gmail.com">imyashgandhi@gmail.com</a>
+        </div>
+
+        <div class="contact-card">
+          <strong>Phone</strong>
+          <a href="tel:+14379745489">+1 437 974 5489</a>
+        </div>
+
+        <div class="contact-card">
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/yash-gandhi-220b3a184" target="_blank" rel="noopener">linkedin.com/in/yash-gandhi-220b3a184</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> Yash Gandhi. All rights reserved.</span>
-    <span>Project Management · Analytics · Continuous Learning</span>
+  <div class="wrap">
+    <strong style="color:var(--navy);">Yash Gandhi</strong><br/>
+    Technical Project Management Portfolio • Continuously updated at meaningful project milestones.
   </div>
 </footer>
-
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-const menu=document.querySelector(".menu-btn");
-const links=document.querySelector(".links");
-menu.addEventListener("click",()=>{
-  const isOpen=links.classList.toggle("open");
-  menu.setAttribute("aria-expanded",String(isOpen));
-});
-document.querySelectorAll(".links a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    links.classList.remove("open");
-    menu.setAttribute("aria-expanded","false");
-  });
-});
-</script>
 </body>
 </html>
